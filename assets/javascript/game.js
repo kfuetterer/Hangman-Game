@@ -1,15 +1,18 @@
   
-	var lives = 10;
+	var lives = 20;
+	var wins = 0;
+	var t = 0;
+	var y = 0;
 	var letter = ["_ ","_ ","_ ","_ ","_ ","_ "];
     var z = ["_ ","_ ","_ ","_ ","_ ","_ "];
 
     document.onkeyup = function(event) {
         var userGuess = event.key;
-        var word = "puzzle";
+        var word = ["puzzle", "hobbit", "knight", "future", "potion", "newton", "random", "abacus"];
 
-        //word[q]
+        var q = 0;
     
-        	for (var i = 0; i < word.length; i++) {
+        	for (var i = 0; i < word[q].length; i++) {
 
         		if (typeof stuff === 'undefined') {
         			var stuff = letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5];
@@ -19,11 +22,9 @@
     
 	        };
 
-	        var y = 0;
-
 	        for (var i = 0; i < word.length; i++) {
 
-	        	if (word.indexOf(userGuess, i) === i) {
+	        	if (word[q].indexOf(userGuess, i) === i) {
 	        		letter[i] = userGuess + " ";
 	        	}
 	        	else {
@@ -38,19 +39,36 @@
 
 	    stuff = letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5];
 
-       	var html = "<p>" + stuff + "</p><p>Lives: " + lives + "</p>";
+       	var html = "<p>" + stuff + "</p><p>Lives: " + lives + "</p><p>Wins: " + wins + "</p>";
        	document.querySelector("#game").innerHTML = html;
 
+	        for (var i = 0; i < word[q].length; i++) {
+	  			if (z[i] != "_ ") {
+	  				t++;
+	  			}
+	  		}
+	  		if (t = word[q].length) {
+	  			q++;
+	  			wins++;
+	  		}
 
-	    	//var t = 0
+	  		function ResetGlobalVariables() {
+				var lives = 20;
+				var wins = 0;
+				var t = 0;
+				var y = 0;
+				var letter = ["_ ","_ ","_ ","_ ","_ ","_ "];
+			    var z = ["_ ","_ ","_ ","_ ","_ ","_ "];	
+		    }
 
-	        //for (var i = 0; i < word.length; i++) {
-	  			//if (z[i] != "_ ") {
-	  			//	t++;
-	  			//}
-	  		//}
-	  		//if (t = word.length) {
-	  		//	alert("You Win!");
-	  		//}
+
+		 	if (lives === 0) {
+		  		var htmll = "<h2>Game Over</h2>";
+		  		document.querySelector("#gameover").innerHTML = htmll;
+		  	}
+
+		  	ResetGlobalVariables();
 
     }
+
+
