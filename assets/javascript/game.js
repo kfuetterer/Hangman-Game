@@ -6,9 +6,9 @@
     document.onkeyup = function(event) {
         var userGuess = event.key;
         var word = "puzzle";
+
+        //word[q]
     
-
-
         	for (var i = 0; i < word.length; i++) {
 
         		if (typeof stuff === 'undefined') {
@@ -19,6 +19,8 @@
     
 	        };
 
+	        var y = 0;
+
 	        for (var i = 0; i < word.length; i++) {
 
 	        	if (word.indexOf(userGuess, i) === i) {
@@ -26,11 +28,29 @@
 	        	}
 	        	else {
 	        		letter[i] = z[i];
+	        		y++;
 	        	}
+	        };
+
+	        if (y = word.length) {
+	        	lives--;
 	        };
 
 	    stuff = letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5];
 
        	var html = "<p>" + stuff + "</p><p>Lives: " + lives + "</p>";
        	document.querySelector("#game").innerHTML = html;
+
+
+	    	//var t = 0
+
+	        //for (var i = 0; i < word.length; i++) {
+	  			//if (z[i] != "_ ") {
+	  			//	t++;
+	  			//}
+	  		//}
+	  		//if (t = word.length) {
+	  		//	alert("You Win!");
+	  		//}
+
     }
