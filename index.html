@@ -13,7 +13,7 @@
 	 <div id="game">
  	 </div>
  	 <div id="gameover"></div>
- 	 <button id="button" type="button">Restart</button>
+ 	 <div id="button"></div>
 </body>
 <style>
  h1 {
@@ -34,5 +34,27 @@
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 30px;
  }
+ .button {
+ 	border-radius: 12px;
+ 	background-color: #e7e7e7
+    border: none;
+    color: #555555;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+ }
+
+ .button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
 </style>
 </html>
