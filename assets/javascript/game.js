@@ -9,9 +9,22 @@
     var q = 0;
     var guesses = "";
 
+    	   	function buttonPress() {
+
+				lives = 20;
+				wins = 0;
+				t = 0;
+				y = 0;
+				letter = ["_ ","_ ","_ ","_ ","_ ","_ "];
+				z = ["_ ","_ ","_ ","_ ","_ ","_ "];
+				q = 0;
+				guesses = "";
+				stuff = letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5];
+			};
+
     
 	window.onload = function() {
-		var html = "<p>" + letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5]; + "</p><p>Letters Guessed</p><p>" + "0" + "</p><p>Lives: " + lives + "</p><p>Wins: " + wins + "</p>";
+		var html = "<p>" + letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5]; + "</p><p>Letters Guessed</p><p>" + guesses + "</p><p>Lives: " + lives + "</p><p>Wins: " + wins + "</p>";
 	    document.querySelector("#game").innerHTML = html;
 	}
 
@@ -26,8 +39,6 @@
     		if (lives === 0) {
     			return;
     		};
-
-    		document.onkeyup;
 
         	for (var i = 0; i < word[q].length; i++) {
         		if (typeof stuff === 'undefined') {
@@ -67,38 +78,26 @@
 	  		t = 0;
 			y = 6;
 			letter = ["_ ","_ ","_ ","_ ","_ ","_ "];
+			stuff = letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5];
 			z = ["_ ","_ ","_ ","_ ","_ ","_ "];
 			guesses = "";
 
-		html = "<p>" + stuff + "</p><p>Letters Guessed</p><p>" + guesses + "</p><p>Lives: " + lives + "</p><p>Wins: " + wins + "</p>";
-       	document.querySelector("#game").innerHTML = html;
+			html = "<p>" + stuff + "</p><p>Letters Guessed</p><p>" + guesses + "</p><p>Lives: " + lives + "</p><p>Wins: " + wins + "</p>";
+	       	document.querySelector("#game").innerHTML = html;
 
 	  	};
 
-       	html = "<p>" + stuff + "</p><p>Letters Guessed</p><p>" + guesses + "</p><p>Lives: " + lives + "</p><p>Wins: " + wins + "</p>";
-       	document.querySelector("#game").innerHTML = html;
+	    html = "<p>" + stuff + "</p><p>Letters Guessed</p><p>" + guesses + "</p><p>Lives: " + lives + "</p><p>Wins: " + wins + "</p>";
+	    document.querySelector("#game").innerHTML = html;
 
+	    if (lives === 0) {
 
-	   		if (lives === 0) {
-		  	var htmll = "<h2>Game Over</h2>";
-		  	document.querySelector("#gameover").innerHTML = htmll;
+		var htmll = "<h2>Game Over</h2>";
+		document.querySelector("#gameover").innerHTML = htmll;
 
-		  	var htmlll = "<div style='text-align: center;'><button onclick='buttonPress()' style='border-radius: 12px; background-color: #ffffff; border-color: #bbbbbb; border-width: 2px; border-style: solid; color: #555555; font-size: 20px; padding: 15px 32px; font-family: 'Josephin Sans', sans-serif;'>Restart</button>";
-       		document.querySelector("#button").innerHTML = htmlll;
-       		}
+		var htmlll = "<div style='text-align: center;'><button style='border-radius: 12px; background-color: #ffffff; border-color: #bbbbbb; border-width: 2px; border-style: solid; color: #555555; font-size: 20px; padding: 15px 32px; font-family: 'Josephin Sans', sans-serif;'>Restart</button>";
+        document.querySelector("#button").innerHTML = htmlll;
+
+      	}
     }
-
-   // buttonPress() {
-
-	//	lives = 20;
-		//wins = 0;
-	//	t = 0;
-	//	y = 0;
-	//	letter = ["_ ","_ ","_ ","_ ","_ ","_ "];
-	//	z = ["_ ","_ ","_ ","_ ","_ ","_ "];
-	//	q = 0; 
-		//when button is pushed resetglobalvariables and run function again.
-//	};
-
-
 
