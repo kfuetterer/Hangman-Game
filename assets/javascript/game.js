@@ -8,24 +8,11 @@
     var z = ["_ ","_ ","_ ","_ ","_ ","_ "];
     var q = 0;
     var guesses = "";
-
-    	   	function buttonPress() {
-
-				lives = 20;
-				wins = 0;
-				t = 0;
-				y = 0;
-				letter = ["_ ","_ ","_ ","_ ","_ ","_ "];
-				z = ["_ ","_ ","_ ","_ ","_ ","_ "];
-				q = 0;
-				guesses = "";
-				stuff = letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5];
-			};
-
-    
+ 
 	window.onload = function() {
 		var html = "<p>" + letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5]; + "</p><p>Letters Guessed</p><p>" + guesses + "</p><p>Lives: " + lives + "</p><p>Wins: " + wins + "</p>";
 	    document.querySelector("#game").innerHTML = html;
+
 	}
 
     document.onkeyup = function Game(event) {
@@ -92,12 +79,32 @@
 
 	    if (lives === 0) {
 
+
 		var htmll = "<h2>Game Over</h2>";
 		document.querySelector("#gameover").innerHTML = htmll;
 
-		var htmlll = "<div style='text-align: center;'><button style='border-radius: 12px; background-color: #ffffff; border-color: #bbbbbb; border-width: 2px; border-style: solid; color: #555555; font-size: 20px; padding: 15px 32px; font-family: 'Josephin Sans', sans-serif;'>Restart</button>";
+		htmlll = "<button style='border-radius: 12px; background-color: #ffffff; border-color: #bbbbbb; border-width: 2px; border-style: solid; color: #555555; font-size: 20px; padding: 15px 32px; font-family: 'Josephin Sans', sans-serif;'>Restart</button>";
         document.querySelector("#button").innerHTML = htmlll;
 
       	}
+      	
     }
 
+document.ready = function() {
+
+	        document.querySelector("#button").onclick = function reset(){
+	    		console.log("It works!");
+				lives = 20;
+				wins = 0;
+				t = 0;
+				y = 0;
+				letter = ["_ ","_ ","_ ","_ ","_ ","_ "];
+				z = ["_ ","_ ","_ ","_ ","_ ","_ "];
+				q = 0;
+				guesses = "";
+				stuff = letter[0] + letter[1] + letter[2] + letter[3] + letter[4] + letter[5];
+			};
+
+}
+
+	    		
